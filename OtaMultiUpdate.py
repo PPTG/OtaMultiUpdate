@@ -23,28 +23,33 @@ while True:
         window.Close()
         os.remove('Preparing')
     if event == 'Upload':
-
-        file = open(values[1]).read()
-        adress = file.split("\n")
-        many = len(adress)
-        BAR_MAX = many
-        window['_bar_'].update(status)
-        window['_len_'].update(many)
-
-        for i in adress:
-            if status < 10:
-                module.PrepareAnotherFiles.hex(str(values[0]), str(values[2]), '0' + str(status))
-                command = 'python espota.py -d -i ' + i + ' -f ' + 'Preparing/' + str(values[2]).replace('0', '') + '0' + str(status) + '.bin'
-            if status >= 10:
-                module.PrepareAnotherFiles.hex(str(values[0]), str(values[2]), str(status))
-                command = 'python espota.py -d -i ' + i + ' -f ' + 'Preparing/' + str(values[2]).replace("0", "") + str(status) + '.bin'
-            event, values = window.read(timeout=10)
-            window['-PROG-'].update(status)
+        try:
+            file = open(values[1]).read()
+            adress = file.split("\n")
+            many = len(adress)
+            BAR_MAX = many
             window['_bar_'].update(status)
+            window['_len_'].update(many)
 
-            print(command)
-            os.system(command)
-            status += 1
-        Psg.popup('Uploading Done !', 'Wait for reboot all devices')
+            for i in adress:
+                if status < 10:
+                    module.PrepareAnotherFiles.hex(str(values[0]), str(values[2]), '0' + str(status))
+                    command = 'python espota.py -d -i ' + i + ' -f ' + 'Preparing/' + str(values[2]).replace('0', '') + '0' + str(status) + '.bin'
+                if status >= 10:
+                    module.PrepareAnotherFiles.hex(str(values[0]), str(values[2]), str(status))
+                    command = 'python espota.py -d -i ' + i + ' -f ' + 'Preparing/' + str(values[2]).replace("0", "") + str(status) + '.bin'
+                event, values = window.read(timeout=10)
+                window['-PROG-'].update(status)
+                window['_bar_'].update(status)
 
-        status = 0
+                print(command)
+                os.system(command)
+                status += 1
+            Psg.popup('Uploading Done !', 'Wait for reboot all devices')
+
+            status = 0
+
+        except Exception as e:
+            tb = traceback.format_exc()
+            sg.Print(f'An error happened.  Here is the info:', e, tb)
+            sg.popup_error(f'AN EXCEPTION OCCURRED!', e, tb)
