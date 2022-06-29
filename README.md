@@ -25,6 +25,7 @@ That's all your .BIN file for OtaMultiUploader.
 2) Create your .txt (Internet Protocol list) file with your thirty devices adresses.
 
 IP List Structure:
+<br>
 ![OTA_IP_List_Structure](https://user-images.githubusercontent.com/24864691/139674993-27410fde-e140-4847-978c-136bdfd68f1f.png)
 <br>
 <br>
