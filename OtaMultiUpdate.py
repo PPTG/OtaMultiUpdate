@@ -1,4 +1,5 @@
 import os
+import traceback
 import PySimpleGUI as Psg
 import module_software_prepare as module
 
@@ -51,5 +52,5 @@ while True:
 
         except Exception as e:
             tb = traceback.format_exc()
-            sg.Print(f'An error happened.  Here is the info:', e, tb)
-            sg.popup_error(f'AN EXCEPTION OCCURRED!', e, tb)
+            Psg.Print(f'An error happened.  Here is the info:', e, tb)
+            Psg.popup_error(f'AN EXCEPTION OCCURRED!', e, tb)

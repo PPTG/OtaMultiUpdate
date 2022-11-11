@@ -1,6 +1,5 @@
 import os
 
-
 class PrepareAnotherFiles:
     @staticmethod
     def hex(hex_file, hex_secound_file, hexmodulenumber):
