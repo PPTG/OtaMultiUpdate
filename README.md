@@ -42,3 +42,5 @@ Compact Miner generates some image and renders it:
 ![Miner_Layer_A](https://user-images.githubusercontent.com/24864691/139735332-4e6abdec-339e-4197-8d83-5a85cce45a36.png)
 ![Miner_Layer_B](https://user-images.githubusercontent.com/24864691/139735383-3f151f10-dded-405a-a55f-82d2b47a529a.png)
 ![IMG_20211017_203918](https://user-images.githubusercontent.com/24864691/139735367-ee4ff7c0-6b5d-496b-930c-6e0c8cfe04f5.jpg)
+![IMG_20230101_175359](https://user-images.githubusercontent.com/24864691/210179791-28e78325-b743-4859-8ca3-0dd560f57140.jpg)
+
